@@ -1,10 +1,10 @@
 # Network Drive Management Interface
 
-基於Node.js技術打造的RESTful API部落格後端平台。
+打造一個簡潔直觀的雲端硬碟管理介面，讓使用者能輕鬆上傳、下載、管理與瀏覽雲端檔案。
 
 ## 壹、基本說明
 **一、目標：**
-這個RESTful API平台旨在為前端提供高效的部落格帳戶與貼文管理功能，支援用戶註冊與登入、貼文創建、瀏覽、修改和刪除等常見操作。平台開發基於PostgreSQL、Node.js及相關套件，除了實現常規的安全防護措施外，我們還針對軟體的正確性與完整性進行了嚴格的單元測試，並使用Jest測試框架來確保系統的穩定性與可靠性。
+本系統為一個可自架的輕量級雲端硬碟管理平台，支援檔案上傳、下載、刪除與資料夾結構維護，適用於個人雲端備份、教學資源分享或企業內部文件整合。前端以Vue.js构建互動式UI，後端則採用Node.js架設RESTful API，搭配MongoDB資料庫，實現即時、彈性的檔案操作流程。
 <br>
 
 **二、開發環境：**
@@ -13,8 +13,9 @@
 * 作業系統：Debian
 * 程式語言：JavaScript
 * JavaScript執行環境：Node.js
+* Vue.js:開發工具
 * Node.js資源管理工具：npm
-* 資料庫：
+* 資料庫：MongoDB
 * 程式編輯器：Visual Studio Code
 
 **三、使用相依套件：**
@@ -27,20 +28,28 @@
   
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
-* `GET` /：首頁
-* `POST` /api/register：創建帳號
-* `POST` /api/login：登入帳號
-* `POST` /api/posts：儲存貼文
-* `GET` /api/posts或`GET` /api/posts?limit=列出資料筆數&offset=從第幾筆資料開始列出：查詢貼文
+* `POST` /users：創建用戶
 ```json
 {
-  "path": "newFolder/",
-  "folderName": "newFolder1"
+  "name": "John Doe2",
+  "email": "john2@example.com",
+  "password": 123456
 }
 ```
+* `PUT` /users/:id：更新用戶
 ```json
 {
-  "path": "newFolder/newFolder1"
+  "name": "John Doe4",
+  "email": "john4@example.com",
+  "password": 123456
+}
+```
+* `DELETE` /users/:id：刪除用戶
+* `POST` /login：登入
+```json
+{
+  "email": "john4@example.com",
+  "password": 123456
 }
 ```
 
