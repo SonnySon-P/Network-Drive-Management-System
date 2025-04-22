@@ -28,19 +28,20 @@
   
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
+1. 用戶管理的API
 * `POST` /users：創建用戶
 ```json
 {
-  "name": "John Doe2",
-  "email": "john2@example.com",
+  "name": "John Doe",
+  "email": "john@example.com",
   "password": 123456
 }
 ```
 * `PUT` /users/:id：更新用戶
 ```json
 {
-  "name": "John Doe4",
-  "email": "john4@example.com",
+  "name": "John Doe",
+  "email": "john_Doe@example.com",
   "password": 123456
 }
 ```
@@ -48,10 +49,44 @@
 * `POST` /login：登入
 ```json
 {
-  "email": "john4@example.com",
+  "email": "john_Doe@example.com",
   "password": 123456
 }
 ```
+* `POST` /login：登入
+```json
+{
+  "email": "john_Doe@example.com",
+  "password": 123456
+}
+```
+2. 檔案管理的API，使用前必須在使用Authorization header輸入Bearer <token>
+* `GET` /files：取得雲端硬碟root檔案清單
+* `GET` /files/?path=資料夾路徑：取得雲端硬碟特定路徑檔案清單
+* `POST` /create-folder：新增資料夾
+```json
+{
+  "path": "",
+  "folderName": "folder3"
+}
+```
+* `DELETE` delete-folder/?path=資料夾路徑：刪除資料夾
+* `POST` /create-folder：新增資料夾
+```json
+{
+  "path": "",
+  "folderName": "folder3"
+}
+```
+* `GET` /download-file?path=檔案路徑：下載檔案
+* `POST` /move-file：移動檔案
+```json
+{
+  "source": "folder1/try-1.py",
+  "target": "folder3/try-1.py"
+}
+```
+* `DELETE` /delete-file/?path=檔案路徑：刪除檔案
 
 > [!Note]
 > 此GET請求採用偏移分頁方法，使用兩個參數：offset（資料集中的起始位置）和limit（返回的資料數量）。其中，offset通常表示搜尋結果的第一筆資料的索引（需注意，資料集的索引是從0開始計算），而limit則指定響應中返回的資料筆數。例如，請求`GET`  api/posts?limit=10&offset=0 中，limit=10表示返回10篇貼文，offset=0則表示從資料集的第0筆貼文開始計算。若採用沒有參數傳遞方法（`GET` /api/posts），則會列出所有搜尋結果。
