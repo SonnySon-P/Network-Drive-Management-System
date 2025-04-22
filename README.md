@@ -79,6 +79,10 @@
 }
 ```
 * `GET` /download-file?path=檔案路徑：下載檔案
+* `POST` /uploaded-file：上傳檔案
+```shell
+curl -X POST http://localhost:3095/upload-file -H "Authorization: Bearer <token> -F "file=@main.c" 
+```
 * `POST` /move-file：移動檔案
 ```json
 {
