@@ -21,13 +21,32 @@
 **三、使用相依套件：**
 1. 以下是後端平台所使用的Node.js套件：
 * express（Web應用程式架構）
+* cors (跨來源資源共用)
 * dotenv（將敏感變數放入環境變數中）
 * bcrypt（密碼雜湊函式）
 * jsonwebtoken（JSON Web Token）
 * multer（處理文件上傳到伺服器）
 
 2. 以下是前端平台所使用的Vue.js套件：
+* vue-router（前端路由管理器）npm install vue-router@4
 * axios（API請求）
+
+若遇到Node.js版本是不在npm套件的引擎支持的範圍內，則使用nvm來管理Node版本，
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash  # 下載nvm
+nvm install <版本編號>  # 安裝node.js
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # 載入nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # 載入nvm bash_completion
+nvm use <版本編號>  # 切換node.js版本
+node -v  # 查詢node.js版本
+```
+
+手動建立Router
+```bash
+mkdir src/router
+touch src/router/index.js
+```
   
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
