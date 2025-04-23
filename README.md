@@ -8,23 +8,26 @@
 <br>
 
 **二、開發環境：**
-以下是開發該平台所採用的環境：
+以下是開發前後平台所採用的環境：
 * 虛擬機：Docker
 * 作業系統：Debian
 * 程式語言：JavaScript
 * JavaScript執行環境：Node.js
-* Vue.js:開發工具
+* Vue cli：JavaScript前端框架
 * Node.js資源管理工具：npm
 * 資料庫：MongoDB
 * 程式編輯器：Visual Studio Code
 
 **三、使用相依套件：**
-以下是開發該平台所使用的Node.js套件：
+1. 以下是後端平台所使用的Node.js套件：
 * express（Web應用程式架構）
 * dotenv（將敏感變數放入環境變數中）
 * bcrypt（密碼雜湊函式）
 * jsonwebtoken（JSON Web Token）
 * multer（處理文件上傳到伺服器）
+
+2. 以下是前端平台所使用的Vue.js套件：
+* axios（API請求）
   
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
