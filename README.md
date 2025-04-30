@@ -10,7 +10,6 @@
 **二、開發環境：**
 以下是開發前後平台所採用的環境：
 * 虛擬機：Docker
-* 作業系統：Debian
 * 程式語言：JavaScript
 * JavaScript執行環境：Node.js
 * Vue cli：JavaScript前端框架
@@ -30,6 +29,30 @@
 2. 以下是前端平台所使用的Vue.js套件：
 * vue-router（前端路由管理器）npm install vue-router@4
 * axios（API請求）
+
+**四、對於RESTful API請求：** 
+以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
+* `POST` /users：新增用戶(請求內容有name、email、password)
+* `POST` /login：用戶登入(請求內容有email、password)
+* `PUT` /users/:id：更新用戶(請求內容有name、email、password)
+* `PUT` /files?path=<路徑>：取得雲端硬碟檔案清單
+* `POST` /create-folder：新增資料夾(請求內容有path)
+* `DELETE` /delete-folder?path=<路徑>：刪除資料夾
+* `POST` /upload-file：上傳檔案(請求內容有上傳檔案跟path，兩者請求內容是不一樣的)
+* `GET` /download-file?path=<路徑>：下載檔案
+* `DELETE` /delete-file?path=<路徑>：刪除檔案
+
+**五、檔案說明：** 
+此專案檔案主要可分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
+1. Backend
+* server.js：為RESTful API的主要程式碼。
+
+2. Frontend(請以Vue cli創建專案)
+* index.js：應用程式的進入點，有別於React.js初始化後的檔案，加入了引入套件的程式碼。
+* app.js：主要呈現的網頁內容。
+
+## 貳、操作說明
+由於前後端採用不同的系統架構，其安裝方式亦有所差異，具體操作如下所示：
 
 若遇到Node.js版本是不在npm套件的引擎支持的範圍內，則使用nvm來管理Node版本，
 ```bash
