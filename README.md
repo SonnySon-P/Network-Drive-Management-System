@@ -41,6 +41,8 @@
 * `POST` /upload-file：上傳檔案(請求內容有上傳檔案跟path，兩者請求內容是不一樣的)
 * `GET` /download-file?path=<路徑>：下載檔案
 * `DELETE` /delete-file?path=<路徑>：刪除檔案
+> [!Warning]
+> 請特別注意，除了新增用戶與用戶登入外，其餘用戶RESTful API都需要傳入jwt進行驗證。
 
 **五、檔案說明：** 
 此專案檔案主要可分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
