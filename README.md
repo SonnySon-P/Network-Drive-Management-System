@@ -12,10 +12,12 @@
 * 虛擬機：Docker
 * 程式語言：JavaScript
 * JavaScript執行環境：Node.js
-* Vue cli：JavaScript前端框架
-* Node.js資源管理工具：npm
+* * Node.js資源管理工具：npm
+* JavaScript前端框架：Vue.js
+* Vue CLI：Vue.js開發環境
 * 資料庫：MongoDB
 * 程式編輯器：Visual Studio Code
+* 測試瀏覽器：Safari（Google Chrome似乎會阻擋報錯，目前未修正）
 
 **三、使用相依套件：**
 1. 以下是後端平台所使用的Node.js套件：
@@ -29,9 +31,11 @@
 2. 以下是前端平台所使用的Vue.js套件：
 * vue-router（前端路由管理器）npm install vue-router@4
 * axios（API請求）
+* jwt-decode（JWT解碼器）
+* bootstrap（CSS框架）
 
 **四、對於RESTful API請求：** 
-以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
+以下是此後端平台提供的RESTful API端點，包含對應的HTML方法、路徑及參數說明，如下所示：
 * `POST` /users：新增用戶(請求內容有name、email、password)
 * `POST` /login：用戶登入(請求內容有email、password)
 * `PUT` /users/:id：更新用戶(請求內容有name、email、password)
@@ -42,19 +46,63 @@
 * `GET` /download-file?path=<路徑>：下載檔案
 * `DELETE` /delete-file?path=<路徑>：刪除檔案
 > [!Warning]
-> 請特別注意，除了新增用戶與用戶登入外，其餘用戶RESTful API都需要傳入jwt進行驗證。
+> 請特別注意，除了新增用戶與用戶登入外，其餘使用RESTful API都需要傳入jwt進行驗證。
 
 **五、檔案說明：** 
 此專案檔案主要可分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
 1. Backend
 * server.js：為RESTful API的主要程式碼。
 
-2. Frontend(請以Vue cli創建專案)
-* index.js：應用程式的進入點，有別於React.js初始化後的檔案，加入了引入套件的程式碼。
-* app.js：主要呈現的網頁內容。
+2. Frontend(請以Vue CLI創建專案)
+* index.html：瀏覽器一開始加載的HTML檔案。
+* main.js：應用程式的進入點。
+* app.vue：根元件。
+* UserLogin.vue：登入頁面。
+* MainPage.vue：雲端硬碟管理介面。
 
 ## 貳、操作說明
 由於前後端採用不同的系統架構，其安裝方式亦有所差異，具體操作如下所示：
+1. Backend
+* 安裝Node、NPM跟MongoDB
+* 創建一個資料夾，建立專案
+```bash
+mkdir <資料夾名稱>
+cd <資料夾名稱>
+npm init -y
+```
+* 安裝套件
+```bash
+npm install express
+npm install cors
+npm install dotenv
+npm install bcrypt
+npm install jsonwebtoken
+npm install multer
+npm install nodemon
+```
+* 複製後端程式server.js，至專案資料夾
+* 執行伺服器
+```bash
+nodemon server.js
+```
+2. Frontend
+* 安裝Node、NPM跟Vue CLI
+* 創建一個資料夾，建立專案
+```bash
+mkdir <資料夾名稱>
+cd <資料夾名稱>
+vue create my-vue3-project
+```
+* 安裝套件
+```bash
+npm install axios
+npm install jwt-decode
+```
+* 執行伺服器
+```bash
+npm run serve
+```
+
 
 若遇到Node.js版本是不在npm套件的引擎支持的範圍內，則使用nvm來管理Node版本，
 ```bash
