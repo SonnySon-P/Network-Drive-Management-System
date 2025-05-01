@@ -196,6 +196,10 @@ async function startServer() {
 
                     const fileDetails = [];
 
+                    if (files.length === 0) {
+                        return res.status(200).json(fileDetails);  // 空的數組返回200
+                    }
+
                     files.forEach(file => {
                         const filePath = path.join(drivePath, file);
 
@@ -210,7 +214,7 @@ async function startServer() {
                             });
 
                             if (fileDetails.length === files.length) {
-                                return res.json(fileDetails);
+                                return res.status(200).json(fileDetails);
                             }
                         });
                     });
