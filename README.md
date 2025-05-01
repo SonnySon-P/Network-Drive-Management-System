@@ -12,7 +12,7 @@
 * 虛擬機：Docker
 * 程式語言：JavaScript
 * JavaScript執行環境：Node.js
-* * Node.js資源管理工具：npm
+* Node.js資源管理工具：npm
 * JavaScript前端框架：Vue.js
 * Vue CLI：Vue.js開發環境
 * 資料庫：MongoDB
