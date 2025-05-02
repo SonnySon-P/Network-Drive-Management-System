@@ -81,6 +81,11 @@ npm install jsonwebtoken
 npm install multer
 npm install nodemon
 ```
+* 創建儲存環境變數檔案.env，內容如下：
+```.env
+JWT_SECRET_KEY="HlUf$R6Vi0sO1aP"
+BCRYPT_SALT_ROUNDS="10"
+```
 * 複製後端程式server.js，至專案資料夾
 * 執行伺服器
 ```bash
