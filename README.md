@@ -55,7 +55,8 @@
 
 2. Frontend(請以Vue CLI創建專案)
 * index.html：瀏覽器一開始加載的HTML檔案。
-* main.js：應用程式的進入點。
+* index.js：應用程式的主要進入點之一。
+* main.js：應用程式的進入點之一。
 * app.vue：根元件。
 * UserLogin.vue：登入頁面。
 * MainPage.vue：雲端硬碟管理介面。
@@ -104,7 +105,7 @@ vue create my-vue3-project
 npm install axios
 npm install jwt-decode
 ```
-* 複製前端程式到對應資料夾，index.html取代public中的index.html、main.js跟App.vue取代src中的main.js跟App.vue、UserLogin.vue跟MainPage.vue放置src/views中
+* 複製前端程式到對應資料夾，index.html取代public中的index.html、index.js取代router中的index.js、main.js跟App.vue取代src中的main.js跟App.vue、UserLogin.vue跟MainPage.vue放置src/views中
 * 執行伺服器
 ```bash
 npm run serve
