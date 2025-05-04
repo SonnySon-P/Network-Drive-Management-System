@@ -113,7 +113,7 @@ npm run serve
 **二、運行結果：**
 當前後端架構完成建置後，您只需在瀏覽器中輸入127.0.0.1:8080/login以開啟應用程式。以下展示的是系統實際呈現的網頁畫面。
 
-1.登入畫面
+1.登入畫面，網址：http://localhost:8080/Login
 <br>
   <div align="center">
   	<img src="./截圖1.png" alt="Editor" width="500">
